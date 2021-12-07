@@ -65,3 +65,9 @@ jobs:
           name: Deploy backend
           command: |
             npm run backend:deploy
+workflows:
+  deploy:
+    jobs:
+      - build
+      - test
+      - deploy

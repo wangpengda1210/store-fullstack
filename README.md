@@ -28,4 +28,4 @@ The postgres database is hosted on RDS.
 
 ### Circle CI
 The deployment is done using a pipeline on CircleCI
-
+![Circle CI status]
