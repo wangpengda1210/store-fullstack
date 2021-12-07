@@ -15,12 +15,6 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
-      # migrate the database
-      - run:
-          name: Migrate database
-          command: |
-            npm i -g db-migrate
-            npm run db:migrate
       # install, build and deploy frontend
       - run:
           name: Install frontend
@@ -34,6 +28,12 @@ jobs:
           name: Deploy frontend
           command: |
             npm run frontend:deploy
+      # migrate the database
+      - run:
+          name: Migrate database
+          command: |
+            npm i -g db-migrate
+            npm run db:migrate
       # install, build, deploy and test backend
       - run:
           name: Install backend
