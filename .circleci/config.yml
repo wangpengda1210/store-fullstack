@@ -13,24 +13,25 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
+      - aws-elastic-beanstalk/setup
       # install dependencies in both apps
-      - run:
-          name: Install frontend
-          command: |
-            npm run frontend:install
+#      - run:
+#          name: Install frontend
+#          command: |
+#            npm run frontend:install
       - run:
           name: Install backend
           command: |
             npm run backend:install
-      - run:
-          name: Build frontend
-          command: |
-            npm run frontend:build
+#      - run:
+#          name: Build frontend
+#          command: |
+#            npm run frontend:build
       - run:
           name: Build backend
           command: |
             npm run backend:build
       - run:
-          name: Deploy
+          name: Deploy backend
           command: |
-            npm run frontend:deploy
+            npm run backend:deploy
