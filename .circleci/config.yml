@@ -46,6 +46,7 @@ jobs:
       - run:
           name: Test backend
           command: |
+            ENV="test"
             npm run backend:test
       - run:
           name: Deploy backend
