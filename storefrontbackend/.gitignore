@@ -1,5 +1,4 @@
 /.idea/
-/.elasticbeanstalk/
 /dist/
 /node_modules/
 /build/
