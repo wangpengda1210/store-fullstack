@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Migrate database
           command: |
-            npm i -g db-migrate
+            npm i -g db-migrate db-migrate-pg
             npm run db:migrate
       # install, build, deploy and test backend
       - run:
