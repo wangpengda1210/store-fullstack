@@ -1,6 +1,9 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
+
+const BACKEND_HOST = environment.backendHost;
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +22,7 @@ export class LoginService {
     localStorage.setItem('username', `${firstName} ${lastName}`);
     return this.httpClient.post<{
       token: string
-    }>('http://localhost:3000/users/login', {
+    }>(`${BACKEND_HOST}/users/login`, {
       first_name: firstName,
       last_name: lastName,
       password: password
@@ -53,7 +56,7 @@ export class LoginService {
   }
 
   register(firstName: String, lastName: String, password: String): Observable<HttpResponse<void>> {
-    return this.httpClient.post<void>('http://localhost:3000/users', {
+    return this.httpClient.post<void>(`${BACKEND_HOST}/users`, {
       first_name: firstName,
       last_name: lastName,
       password: password

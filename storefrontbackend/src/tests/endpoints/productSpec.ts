@@ -127,7 +127,7 @@ describe('Test the product endpoints', () => {
             function (done) {
                 request.get('/products/' + productId)
                     .then(response => {
-                        expect(response.body.id).toEqual(1);
+                        expect(response.body.id).toEqual(productId);
                         expect(response.body.name).toEqual('orange');
                         expect(response.body.price).toEqual(1);
                         expect(response.body.category).toBeFalsy();

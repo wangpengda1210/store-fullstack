@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  backendHost: "Mystore-env.eba-3uctpvim.us-east-1.elasticbeanstalk.com"
+  backendHost: "http://mystore-env.eba-3uctpvim.us-east-1.elasticbeanstalk.com"
 };
 
 /*

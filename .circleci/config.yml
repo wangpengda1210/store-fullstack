@@ -5,6 +5,9 @@ orbs:
   aws-cli: circleci/aws-cli@1.3.1
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@1.0.2
   # different jobs are calles later in the workflows sections
+dependencies:
+  pre:
+    - npm i -g db-migrate
 jobs:
   build:
     docker:
@@ -16,22 +19,34 @@ jobs:
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
       # install dependencies in both apps
-#      - run:
-#          name: Install frontend
-#          command: |
-#            npm run frontend:install
+      - run:
+          name: Migrate database
+          command: |
+            npm run db:migrate
+      - run:
+          name: Install frontend
+          command: |
+            npm run frontend:install
+      - run:
+          name: Build frontend
+          command: |
+            npm run frontend:build
+      - run:
+          name: Deploy frontend
+          command: |
+            npm run frontend:deploy
       - run:
           name: Install backend
           command: |
             npm run backend:install
-#      - run:
-#          name: Build frontend
-#          command: |
-#            npm run frontend:build
       - run:
           name: Build backend
           command: |
             npm run backend:build
+      - run:
+          name: Test backend
+          command: |
+            npm run backend:test
       - run:
           name: Deploy backend
           command: |

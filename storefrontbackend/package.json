@@ -10,7 +10,7 @@
     "lint": "eslint ./src/*/**.ts && eslint ./src/**.ts",
     "start": "dir && npm install && node .",
     "build": "npx tsc",
-    "jasmine":  "set ENV=test&&db-migrate --env test up&&jasmine&&db-migrate db:drop test",
+    "jasmine":  "set ENV=test&&db-migrate --env test up&&db-migrate --env test down&&jasmine&&db-migrate db:drop test",
     "test": "npm run build && npm run jasmine",
     "deploy": "chmod +x ./bin/deploy.sh && ./bin/deploy.sh"
   },

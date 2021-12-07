@@ -5,6 +5,8 @@
     "frontend:build": "cd MyStore && npm run build",
     "backend:build": "cd storefrontbackend && npm run build",
     "frontend:deploy": "cd MyStore && npm run deploy",
-    "backend:deploy": "cd storefrontbackend && npm run deploy"
+    "backend:deploy": "cd storefrontbackend && npm run deploy",
+    "backend:test": "cd storefrontbackend && npm run test",
+    "db:migrate": "cd storefrontbackend && db-migrate up"
   }
 }
