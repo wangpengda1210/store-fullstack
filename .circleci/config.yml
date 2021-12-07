@@ -31,17 +31,6 @@ jobs:
           name: Build backend
           command: |
             npm run backend:build
-      - persist_to_workspace:
-          root: .
-          paths:
-            - '*'
-  test:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/base:stable"
-    steps:
-      - node/install
-      - checkout
       # migrate the database
       - run:
           name: Migrate database
@@ -73,10 +62,6 @@ workflows:
   deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
       - deploy:
           requires:
             - build
-            - test
