@@ -31,6 +31,10 @@ jobs:
           name: Build backend
           command: |
             npm run backend:build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - '*'
   test:
     docker:
       # the base image can run most needed actions with orbs
