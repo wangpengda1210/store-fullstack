@@ -6,7 +6,3 @@
 /.env
 /CODEOWNERS
 /docker-compose.yml
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
