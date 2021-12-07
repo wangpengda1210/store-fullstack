@@ -1,7 +1,9 @@
 import supertest from 'supertest';
+import dotenv from "dotenv";
 const app = require('../server');
 
 const request = supertest(app);
+dotenv.config();
 
 it('Test the server can be connected', (done) => {
   request
@@ -11,6 +13,7 @@ it('Test the server can be connected', (done) => {
       if (err) {
         return done.fail('Server not responding');
       }
+      console.log(process.env.ENV)
       done();
     });
 });

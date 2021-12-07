@@ -16,18 +16,18 @@ jobs:
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
       # install, build and deploy frontend
-      - run:
-          name: Install frontend
-          command: |
-            npm run frontend:install
-      - run:
-          name: Build frontend
-          command: |
-            npm run frontend:build
-      - run:
-          name: Deploy frontend
-          command: |
-            npm run frontend:deploy
+#      - run:
+#          name: Install frontend
+#          command: |
+#            npm run frontend:install
+#      - run:
+#          name: Build frontend
+#          command: |
+#            npm run frontend:build
+#      - run:
+#          name: Deploy frontend
+#          command: |
+#            npm run frontend:deploy
       # migrate the database
       - run:
           name: Migrate database
