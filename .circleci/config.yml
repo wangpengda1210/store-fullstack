@@ -6,7 +6,7 @@ orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@1.0.2
   # different jobs are calles later in the workflows sections
 jobs:
-  deploy:
+  build:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
