@@ -13,19 +13,8 @@ see the products in cart and delete them, and submit order. The project is deplo
 ## Architecture
 ![architecture diagram](./doc/images/architecture.png)
 
-## Deployment
-### S3
-The frontend is deployed on S3.
-![S3 status](./doc/images/s3_status.png)
-
-### Elastic Beanstalk (EB)
-The backend is deployed on EB.
-![EB status](./doc/images/eb_status.png)
-
-### RDS
-The postgres database is hosted on RDS.
-![RDS status](./doc/images/rds_status.png)
-
-### Circle CI
-The deployment is done using a pipeline on CircleCI
-![Circle CI status]
+## Documents
+The documents can be found in [doc](./doc) folder, including
+- [Infrastructure Description](./doc/InfrastructureDescription.md)
+- [App Dependencies](./doc/AppDepenencies.md)
+- [Pipeline Process](./doc/PipelineProcess.md)

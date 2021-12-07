@@ -41,32 +41,17 @@ The application used the technologies below:
 
 - Modify ```template.env``` with environment variables as below:
 
-| Key               | Description                                                             |
-|-------------------|-------------------------------------------------------------------------|
-| POSTGRES_HOST     | The address where the database runs on                                  |
-| POSTGRES_DB       | The name of the database in development environment                     |
-| POSTGRES_DB_TEST  | The name of the database in test environment                            |
-| POSTGRES_USER     | The username of the user which has all privileges for the two databases |
-| POSTGRES_PASSWORD | The password of the user                                                |
-| ENV               | Working environment, "dev" for development, "test" for testing          |
-| BCRYPT_PASSWORD   | The password used for encrypting passwords for the users                |
-| SALT_ROUNDS       | The hash rounds when encrypting passwords for the users                 |
-| JWT_PASSWORD      | The secret for creating JSON Web Token                                  |
-
-For example,
-```
-  POSTGRES_HOST=127.0.0.1
-  POSTGRES_DB=store_front
-  POSTGRES_DB_TEST=store_front_test
-  POSTGRES_USER=store_user
-  POSTGRES_PASSWORD=password
-
-  ENV=dev
-
-  BCRYPT_PASSWORD=password
-  SALT_ROUNDS=10
-  JWT_PASSWORD=password
-```
+| Key              | Description                                                             |
+|------------------|-------------------------------------------------------------------------|
+| AWS_DB_HOST      | The address where the database runs on                                  |
+| AWS_DB_NAME      | The name of the database in development environment                     |
+| AWS_DB_TEST_NAME | The name of the database in test environment                            |
+| AWS_DB_USER      | The username of the user which has all privileges for the two databases |
+| AWS_DB_PASSWORD  | The password of the user                                                |
+| ENV              | Working environment, "dev" for development, "test" for testing          |
+| BCRYPT_PASSWORD  | The password used for encrypting passwords for the users                |
+| SALT_ROUNDS      | The hash rounds when encrypting passwords for the users                 |
+| JWT_PASSWORD     | The secret for creating JSON Web Token                                  |
 
 - Rename ```template.env``` to ```.env```.
 - Run ```npm i -g db-migrate``` in terminal.
