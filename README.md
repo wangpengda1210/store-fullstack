@@ -10,4 +10,22 @@ see the products in cart and delete them, and submit order. The project is deplo
 
 [Link to the API](http://mystore-env.eba-3uctpvim.us-east-1.elasticbeanstalk.com/)
 
+## Architecture
+![architecture diagram](./doc/images/architecture.png)
+
 ## Deployment
+### S3
+The frontend is deployed on S3.
+![S3 status](./doc/images/s3_status.png)
+
+### Elastic Beanstalk (EB)
+The backend is deployed on EB.
+![EB status](./doc/images/eb_status.png)
+
+### RDS
+The postgres database is hosted on RDS.
+![RDS status](./doc/images/rds_status.png)
+
+### Circle CI
+The deployment is done using a pipeline on CircleCI
+

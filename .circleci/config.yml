@@ -13,28 +13,16 @@ jobs:
     steps:
       - node/install
       - checkout
-      - aws-cli/setup
-      - aws-elastic-beanstalk/setup
-      # install, build and deploy frontend
-#      - run:
-#          name: Install frontend
-#          command: |
-#            npm run frontend:install
-#      - run:
-#          name: Build frontend
-#          command: |
-#            npm run frontend:build
-#      - run:
-#          name: Deploy frontend
-#          command: |
-#            npm run frontend:deploy
-      # migrate the database
+      # Install and build frontend
       - run:
-          name: Migrate database
+          name: Install frontend
           command: |
-            npm i -g db-migrate db-migrate-pg
-            npm run db:migrate
-      # install, build, deploy and test backend
+            npm run frontend:install
+      - run:
+          name: Build frontend
+          command: |
+            npm run frontend:build
+      # Install and build backend
       - run:
           name: Install backend
           command: |
@@ -43,11 +31,36 @@ jobs:
           name: Build backend
           command: |
             npm run backend:build
+  test:
+    docker:
+      # the base image can run most needed actions with orbs
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      # migrate the database
+      - run:
+          name: Migrate database
+          command: |
+            npm i -g db-migrate db-migrate-pg
+            npm run db:migrate
       - run:
           name: Test backend
           command: |
-            ENV="test"
             npm run backend:test
+  deploy:
+    docker:
+      # the base image can run most needed actions with orbs
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - aws-cli/setup
+      - aws-elastic-beanstalk/setup
+      - run:
+          name: Deploy frontend
+          command: |
+            npm run frontend:deploy
       - run:
           name: Deploy backend
           command: |

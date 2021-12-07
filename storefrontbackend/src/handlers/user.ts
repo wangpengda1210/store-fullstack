@@ -33,7 +33,6 @@ const create = async (req: express.Request, res: express.Response) => {
       res.json({ token: token });
     }
   } catch (e) {
-    console.log(e);
     res.status(400).json({ error: `${e}` });
   }
 };
