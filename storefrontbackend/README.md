@@ -75,7 +75,7 @@ For example,
 
 ### 4. Running and Testing
 
-- Run ```npm run start``` in the root of this project to start the server, the server runs on port 3000.
+- Run ```npm run start``` in the root of this project to start the server, the server runs on port 8080.
 - The endpoints available can be found [here](REQUIREMENTS.md#api-endpoints).
 - Run ```npm run test``` to run the test cases for the project.
 

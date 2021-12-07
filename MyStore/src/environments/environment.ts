@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  backendHost: "http://mystore-env.eba-3uctpvim.us-east-1.elasticbeanstalk.com"
+  production: false,
+  backendHost: "http://localhost:8080"
 };
 
 /*
