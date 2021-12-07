@@ -1,0 +1,1 @@
+ALTER TABLE order_products DROP CONSTRAINT unique_orderid_productid;

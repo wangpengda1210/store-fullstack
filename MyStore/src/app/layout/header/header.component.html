@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header-line">
+    <div class="login-area">
+      <a *ngIf="!username" class="login" routerLink="/login">Login</a>
+      <a *ngIf="!username" class="login" routerLink="/register">Register</a>
+
+      <p *ngIf="username">Logged in as: {{ username }}</p>
+      <a *ngIf="username" class="login" (click)="logout()" routerLink="/">Logout</a>
+    </div>
+    <h1>MyStore</h1>
+
+  </div>
+
+  <nav>
+    <a routerLink="/">Product List</a>
+    |
+    <a routerLink="/cart">Cart 🛒</a>
+  </nav>
+</div>

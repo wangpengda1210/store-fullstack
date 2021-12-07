@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="store_front@database-1.c1cqdb2hw9ps.us-east-1.rds.amazonaws.com" uuid="c4db4fb6-dd10-483a-b944-6d91acdf98ff">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://database-1.c1cqdb2hw9ps.us-east-1.rds.amazonaws.com:5432/store_front</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="store_front_test@database-1.c1cqdb2hw9ps.us-east-1.rds.amazonaws.com" uuid="7a1ff0d2-dfd9-4937-872b-1d5d8b2a7032">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://database-1.c1cqdb2hw9ps.us-east-1.rds.amazonaws.com:5432/store_front_test</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

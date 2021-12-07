@@ -1,0 +1,25 @@
+<div class="form-container">
+  <div class="form-panel">
+    <form class="form-margin" #form="ngForm">
+      <h1>Log In</h1>
+      <p class="error-message" *ngIf="errorMassage">{{ errorMassage }}</p>
+      <label for="first-name">First Name:</label>
+      <br>
+      <input id="first-name" class="text-input" type="text" name="first-name"
+             [(ngModel)]="firstName" required maxlength="16">
+      <br>
+      <label for="last-name">Last Name:</label>
+      <br>
+      <input id="last-name" class="text-input" type="text"  name="last-name"
+             [(ngModel)]="lastName" required maxlength="16">
+      <br>
+      <label for="password">Password:</label>
+      <br>
+      <input id="password" class="text-input" type="password" name="password"
+             [(ngModel)]="password" required maxlength="20">
+      <br>
+      <p>No account? <a routerLink="/register">Register</a></p>
+      <input type="submit" class="submit-button" value="Log In" [disabled]="form.invalid" (click)="login()">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "spec_dir": "dist/tests",
+  "spec_files": [
+    "serverSpec.js",
+    "middleware/authSpec.js",
+    "endpoints/userSpec.js",
+    "endpoints/productSpec.js",
+    "endpoints/orderSpec.js",
+    "services/dashboardSpec.js",
+    "models/userSpec.js",
+    "models/productSpec.js",
+    "models/orderSpec.js"
+  ],
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+  "stopSpecOnExpectationFailure": true,
+  "random": false
+}

@@ -1,0 +1,42 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.form-panel {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.form-margin {
+  margin-bottom: 12px;
+}
+
+.text-input {
+  height: 30px;
+  width: 300px;
+  margin: 10px 0;
+}
+
+.submit-button {
+  background-color: #33B5E5;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+
+.submit-button:disabled {
+  background-color: #0f3744;
+}
+
+.error-message {
+  color: red;
+}
+
+a {
+  color: black;
+}

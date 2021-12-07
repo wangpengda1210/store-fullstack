@@ -1,0 +1,16 @@
+{
+  "dev": {
+    "driver": "pg",
+    "host": {"ENV": "AWS_DB_HOST"},
+    "database": {"ENV": "AWS_DB_NAME"},
+    "user": {"ENV": "AWS_DB_USER"},
+    "password": {"ENV": "AWS_DB_PASSWORD"}
+  },
+  "test": {
+    "driver": "pg",
+    "host": {"ENV": "AWS_DB_HOST"},
+    "database": {"ENV": "AWS_DB_TEST_NAME"},
+    "user": {"ENV": "AWS_DB_USER"},
+    "password": {"ENV": "AWS_DB_PASSWORD"}
+  }
+}

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="schema1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/storefrontbackend/.idea/dataSources/0e816744-d959-4322-a512-bb5333468b94/storage_v2/_src_/database/store_front.S026pg/schema/pg_catalog.0S1ZNQ.zip!/" />
+      <root url="jar://$PROJECT_DIR$/storefrontbackend/.idea/dataSources/0e816744-d959-4322-a512-bb5333468b94/storage_v2/_src_/database/store_front.S026pg/schema/information_schema.FNRwLQ.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

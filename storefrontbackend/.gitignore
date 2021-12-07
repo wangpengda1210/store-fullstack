@@ -1,0 +1,13 @@
+/.idea/
+/.elasticbeanstalk/
+/dist/
+/node_modules/
+/build/
+/storefrontbackend.iml
+/.env
+/CODEOWNERS
+/docker-compose.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

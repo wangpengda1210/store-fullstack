@@ -1,0 +1,46 @@
+.header {
+  text-align: center;
+  background: #33B5E5;
+  color: #fff;
+  padding: 12px;
+}
+
+.header-line {
+  position: relative;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.login-area {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.login {
+  align-self: end;
+  height: max-content;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  background-color: #1557FF;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin: 20px;
+  font-size: 1em;
+}
+

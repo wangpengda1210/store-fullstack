@@ -1,0 +1,51 @@
+<div class="empty-cart-message" *ngIf="cartProducts.length === 0">
+  <p>There is no product in your cart.</p>
+  <a routerLink="/">Select products</a>
+</div>
+
+<div class="cart-container" *ngIf="cartProducts.length > 0">
+  <div class="cart-panel">
+    <div class="cart-item" *ngFor="let product of cartProducts">
+      <img src="/assets/images/{{ product.name }}.jpg" alt="Image for{{ product.name }}">
+      <div class="cart-item-details">
+        <div class="cart-item-title">
+          <p><b>{{ product.name }}</b></p>
+          <a routerLink="/cart" (click)="deleteProduct(product.id)">Delete</a>
+        </div>
+
+        <p>${{ product.price }}</p>
+
+        <div class="product-amount">
+          <label for="product-quantity">Amount: </label>
+          <input class="number-input" id="product-quantity" type="number" min="0"
+                 [(ngModel)]="product.quantity" (ngModelChange)="changeQuantity(product.id, $event)">
+        </div>
+      </div>
+    </div>
+
+    <p class="total"><b>Total: ${{ totalPrice }}</b></p>
+  </div>
+
+  <div class="cart-panel">
+    <form class="form-margin" #form="ngForm" (ngSubmit)="submitOrder()">
+      <label for="full-name">Full Name:</label>
+      <br>
+      <input id="full-name" class="text-input" type="text" name="full-name"
+             [(ngModel)]="fullName" placeholder="(minimum 3 characters)" required minlength="3">
+      <br>
+      <label for="address">Address:</label>
+      <br>
+      <input id="address" class="text-input" type="text"  name="address"
+             [(ngModel)]="address" placeholder="(minimum 6 characters)" required minlength="6">
+      <br>
+      <label for="card-number">Credit Card Number:</label>
+      <br>
+      <input id="card-number" class="text-input" type="text" name="card-number"
+             [(ngModel)]="cardNumber" placeholder="(16-digit number)" required minlength="16" maxlength="16" pattern="[0-9]*">
+      <br>
+      <p class="hint">We'll never share your payment details with anyone else.</p>
+      <br>
+      <input type="submit" class="submit-button" value="Submit" [disabled]="form.invalid">
+    </form>
+  </div>
+</div>
