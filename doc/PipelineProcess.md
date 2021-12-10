@@ -17,6 +17,9 @@ are used.
 | AWS_SECRET_ACCESS_KEY | The secret access key ID for the IAM User                                                                   |
 | AWS_DEFAULT_REGION    | The AWS Region to send the request to                                                                       |
 
+The overview for the pipeline is shown in the diagram below.
+![Overview for pipeline](./images/pipeline.png)
+
 ![Circle CI status](./images/circle_status.png)
 
 1. Install nodeJS and set up AWS CLI and EB
@@ -30,3 +33,16 @@ then run jasmine to test the backend
 in the frontend folder, where ```<backet-name>``` is the name of the s3 bucket to deploy the frontend
 7. Deploy the backend by running ```eb deploy``` in the backend folder, make sure to run ```eb init``` before the first
 deploy
+8. Set the environment variables for EB, including
+
+| Key               | Description                                                             |
+|-------------------|-------------------------------------------------------------------------|
+| AWS_DB_HOST       | The address where for the RDS database runs on                          |
+| AWS_DB_NAME       | The name of the database in development environment                     |
+| AWS_DB_TEST_NAME  | The name of the database in test environment                            |
+| AWS_DB_USER       | The username of the user which has all privileges for the two databases |
+| AWS_DB_PASSWORD   | The password of the user                                                |
+| ENV               | Working environment, set to "dev"                                       |
+| BCRYPT_PASSWORD   | The password used for encrypting passwords for the users                |
+| SALT_ROUNDS       | The hash rounds when encrypting passwords for the users                 |
+| JWT_PASSWORD      | The secret for creating JSON Web Token                                  |

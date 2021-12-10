@@ -7,6 +7,9 @@ orbs:
   # different jobs are calles later in the workflows sections
 jobs:
   build:
+    filters:
+      branches:
+        only: master
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
@@ -52,4 +55,11 @@ jobs:
           name: Deploy backend
           command: |
             npm run backend:deploy
+      - run:
+          name: Set enviroment variables
+          command: |
+            eb setenv AWS_DB_HOST=$AWS_DB_HOST AWS_DB_NAME=$AWS_DB_NAME AWS_DB_USER=$AWS_DB_USER \
+            AWS_DB_TEST_NAME=$AWS_DB_TEST_NAME AWS_DB_USER=$AWS_DB_USER AWS_DB_PASSWORD=$AWS_DB_PASSWORD \
+            ENV=dev BCRYPT_PASSWORD=$BCRYPT_PASSWORD SALT_ROUNDS=$SALT_ROUNDS JWT_PASSWORD=$JWT_PASSWORD \
+            port=$port
 
